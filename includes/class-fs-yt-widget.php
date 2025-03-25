@@ -1,12 +1,7 @@
 <?php
 class FSYTWidget extends WP_Widget {
     public function __construct(){
-        add_action('init', [$this, 'register_custom_yt_widget']);
         parent::__construct('fs-yt-widget', 'Fluffy Spoon YT Widget', ['description'=>'This plugin creates widget to show yt channel details on the webste.']);
-    }
-
-    public function register_custom_yt_widget(){
-        echo "Plugin has been initialized";
     }
 
     public function widget($args, $instance){
@@ -20,7 +15,7 @@ class FSYTWidget extends WP_Widget {
         $text = !empty($instance['text']) ? $instance['text'] : 'This is default text';
         ?> <p>
     <label for="<?php echo($this->get_field_id('text')); ?>">Text:</label>
-    <input class="wide-fat" name="<?php echo($this->get_field_name('text')); ?>"
+    <input class="widefat" name="<?php echo($this->get_field_name('text')); ?>"
         id="<?php echo($this->get_field_id('text')); ?>" value="<?php echo esc_attr($text); ?>" type="text" />
 </p> <?php
 
