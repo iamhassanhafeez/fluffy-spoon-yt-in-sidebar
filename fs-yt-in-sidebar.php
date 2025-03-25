@@ -19,5 +19,10 @@
  }
  add_action('plugins_loaded', 'custom_yt_widget_init');
 
+ function register_fs_yt_widget(){
+    register_widget('FSYTWidget');
+ }
+ add_action('widgets_init', 'register_fs_yt_widget');
+
  
 ?>
