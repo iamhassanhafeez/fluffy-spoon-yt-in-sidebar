@@ -12,5 +12,12 @@
 
  if(!defined('ABSPATH')) exit;
 
+ require_once plugin_dir_path(__FILE__).'includes/class-fs-yt-widget.php';
+ 
+ function custom_yt_widget_init(){
+    new FSYTWidget();
+ }
+ add_action('plugins_loaded', 'custom_yt_widget_init');
+
  
 ?>
